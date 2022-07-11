@@ -1,0 +1,46 @@
+     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <a class="btn btn-primary btn-sm  mt-5" href="/create">Add New Member</a>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>All Students</h3>
+                    </div>
+                    <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</td>
+                                        <th>Name</>
+                                        <th>Email</>
+                                        <th>Cell</>
+                                        <th>Photo</>
+                                        <th>Action</>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   
+                                        <% students.forEach((elements, index) => { %>
+                                            <tr>
+                                                <td><%= index + 1 %> </td>
+                                                <td><%= elements.name %> </td>
+                                                <td><%= elements.email %></td>
+                                                <td><%= elements.cell %></td>
+                                                <td><img style="width: 50px ; height: 50px; object-fit:cover;" src="/assets/upload/<%= elements.photo %> " alt="photo"></td>
+                                                <td>
+                                                    <a href="/<%= elements._id %> " class="btn btn-sm btn-primary" ><i class="fa-solid fa-binoculars"></i></a>
+                                                    <a href="/update/<%= elements._id %>" class="btn btn-sm btn-warning"><i class="fa-solid fa-user-pen"></i></a>
+                                                    <a href="/delete/<%= elements._id %>" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        <% }) %>
+
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+
+               
+            </div>
+        </div>
+    </div>
